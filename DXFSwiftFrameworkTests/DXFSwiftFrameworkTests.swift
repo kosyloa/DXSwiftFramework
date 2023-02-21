@@ -7,7 +7,13 @@
 
 import XCTest
 @testable import DXFSwiftFramework
-
+class TestListener: NSObject, DXFSubscriptionListener {
+    @objc dynamic var count = 0
+    func received(_ events: [DXFTimeSale?]) {
+        count += events.count
+        print(count)
+    }
+}
 class DXFSwiftFrameworkTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -19,6 +25,21 @@ class DXFSwiftFrameworkTests: XCTestCase {
     }
 
     func testExample() throws {
+        let env = DXFEnv()
+        let connection = DXFConnection(address: "localhost:6666", env: env)
+        let res = connection.connect()
+        let feed = DXFFeed(connection: connection, env: env)
+        let subscr = DXFSubscription(env: env, feed: feed)
+        let testListener = TestListener()
+        subscr.addListener(testListener)
+        subscr.subscrive("ETH/USD:GDAX")
+        
+        print("connected")
+        let expectation = keyValueObservingExpectation(for: testListener, keyPath: "count") { (value, value1) in
+            return testListener.count >= 30
+        }
+        
+        wait(for: [expectation], timeout: 210)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
