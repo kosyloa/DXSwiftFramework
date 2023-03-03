@@ -9,10 +9,10 @@ import Foundation
 @_implementationOnly import graal_builds
 
 class DXFFeed {
-    let connection: DXFConnection
+    let connection: DXEndpoint
     let env: DXFEnv
     let feed: UnsafeMutablePointer<dxfg_feed_t>
-    init(connection: DXFConnection, env: DXFEnv) {
+    init(connection: DXEndpoint, env: DXFEnv) {
         self.connection = connection
         self.env = env
         self.feed = dxfg_DXEndpoint_getFeed(self.env.thread.pointee, self.connection.endpoint)

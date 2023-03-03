@@ -8,26 +8,37 @@
 import Foundation
 
 public class DXFPublicEnv {
-    let env: DXFEnv
-    let connection: DXFConnection
-    let feed: DXFFeed
-    let subscr: DXFSubscription
-    var listener: DXFSubscriptionListener? = nil
+//    let env: DXFEnv
+//    let connection: DXEndpoint
+//    let feed: DXFFeed
+//    let subscr: DXFeedSubscription
+//    var listener: DXFSubscriptionListener? = nil
     public init() {
-        env = DXFEnv()
-        connection = DXFConnection(address: "localhost:6666", env: env)
-        _ = connection.connect()
-        feed = DXFFeed(connection: connection, env: env)
-        subscr = DXFSubscription(env: env, feed: feed)
+        
+//        env = DXFEnv()
+        
+        let endpoint = DXEndpoint.builder()
+            .withPropery("dxfeed.address", "demo.dxfeed.com:7300")
+            .build()
+        let subscription = endpoint.getFeed().createSubscription(.Quote)
+        subscription.addListener { events in
+            events.forEach { print($0) }
+        }
+        subscription.addSymbols("AAPL")
+        
+        _ = subscription.getFeed()
+        
+
+//        feed = DXFFeed(connection: connection, env: env)
         print("created ")
     }
     
     public func addListener(_ listener: DXFSubscriptionListener) {
        
-        self.listener = listener
-        if let ls = self.listener  {
-            subscr.addListener(ls)
-        }
-        subscr.subscrive("ETH/USD:GDAX")
+//        self.listener = listener
+//        if let ls = self.listener  {
+//            subscr.addListener(ls)
+//        }
+//        subscr.subscrive("ETH/USD:GDAX")
     }
 }

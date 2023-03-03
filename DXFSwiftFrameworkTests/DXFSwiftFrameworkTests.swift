@@ -26,10 +26,10 @@ class DXFSwiftFrameworkTests: XCTestCase {
 
     func testExample() throws {
         let env = DXFEnv()
-        let connection = DXFConnection(address: "localhost:6666", env: env)
+        let connection = DXEndpoint(address: "localhost:6666", env: env)
         let res = connection.connect()
         let feed = DXFFeed(connection: connection, env: env)
-        let subscr = DXFSubscription(env: env, feed: feed)
+        let subscr = DXFeedSubscription(env: env, feed: feed)
         let testListener = TestListener()
         subscr.addListener(testListener)
         subscr.subscrive("ETH/USD:GDAX")

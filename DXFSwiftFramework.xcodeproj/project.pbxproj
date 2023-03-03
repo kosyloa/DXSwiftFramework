@@ -31,15 +31,16 @@
 		803C613F29A3BA7D00102B65 /* libDxFeedGraalNativeApi.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 803C613D29A3BA7D00102B65 /* libDxFeedGraalNativeApi.dylib */; platformFilters = (macos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		803C614229A3BABD00102B65 /* DXFEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C614129A3BABD00102B65 /* DXFEnv.swift */; };
 		803C614C29A3C19400102B65 /* DXFFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C614B29A3C19400102B65 /* DXFFeed.swift */; };
-		803C614E29A3C1B600102B65 /* DXFConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C614D29A3C1B600102B65 /* DXFConnection.swift */; };
+		803C614E29A3C1B600102B65 /* DXEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C614D29A3C1B600102B65 /* DXEndpoint.swift */; };
 		803C615029A3C4F200102B65 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C614F29A3C4F200102B65 /* String+Extension.swift */; };
 		803C615229A3C7DE00102B65 /* BrdigeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C615129A3C7DE00102B65 /* BrdigeCast.swift */; };
-		803C615429A3CCF400102B65 /* DXFSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C615329A3CCF400102B65 /* DXFSubscription.swift */; };
+		803C615429A3CCF400102B65 /* DXFeedSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C615329A3CCF400102B65 /* DXFeedSubscription.swift */; };
 		803C615629A3D0E600102B65 /* DXFTimeSale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C615529A3D0E600102B65 /* DXFTimeSale.swift */; };
 		803C615D29A3D20D00102B65 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 803C615C29A3D20D00102B65 /* libc++.tbd */; };
 		803C617729A3DA2600102B65 /* PublicFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C617629A3DA2600102B65 /* PublicFile.swift */; };
 		803C617929A3DC6300102B65 /* DXFPublicEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C617829A3DC6300102B65 /* DXFPublicEnv.swift */; };
 		803C617B29A3DD5500102B65 /* DXFSubscriptionListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C617A29A3DD5500102B65 /* DXFSubscriptionListener.swift */; };
+		809E25D329B0F17800AD5D27 /* EventEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E25D229B0F17800AD5D27 /* EventEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,15 +78,16 @@
 		803C613D29A3BA7D00102B65 /* libDxFeedGraalNativeApi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDxFeedGraalNativeApi.dylib; path = graal_builds/osx_universal/libDxFeedGraalNativeApi.dylib; sourceTree = "<group>"; };
 		803C614129A3BABD00102B65 /* DXFEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFEnv.swift; sourceTree = "<group>"; };
 		803C614B29A3C19400102B65 /* DXFFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFFeed.swift; sourceTree = "<group>"; };
-		803C614D29A3C1B600102B65 /* DXFConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFConnection.swift; sourceTree = "<group>"; };
+		803C614D29A3C1B600102B65 /* DXEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXEndpoint.swift; sourceTree = "<group>"; };
 		803C614F29A3C4F200102B65 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		803C615129A3C7DE00102B65 /* BrdigeCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrdigeCast.swift; sourceTree = "<group>"; };
-		803C615329A3CCF400102B65 /* DXFSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFSubscription.swift; sourceTree = "<group>"; };
+		803C615329A3CCF400102B65 /* DXFeedSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFeedSubscription.swift; sourceTree = "<group>"; };
 		803C615529A3D0E600102B65 /* DXFTimeSale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFTimeSale.swift; sourceTree = "<group>"; };
 		803C615C29A3D20D00102B65 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
 		803C617629A3DA2600102B65 /* PublicFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFile.swift; sourceTree = "<group>"; };
 		803C617829A3DC6300102B65 /* DXFPublicEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFPublicEnv.swift; sourceTree = "<group>"; };
 		803C617A29A3DD5500102B65 /* DXFSubscriptionListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DXFSubscriptionListener.swift; sourceTree = "<group>"; };
+		809E25D229B0F17800AD5D27 /* EventEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,14 +139,15 @@
 				803C612129A3BA2800102B65 /* DXFSwiftFramework.h */,
 				803C614129A3BABD00102B65 /* DXFEnv.swift */,
 				803C614B29A3C19400102B65 /* DXFFeed.swift */,
-				803C614D29A3C1B600102B65 /* DXFConnection.swift */,
-				803C615329A3CCF400102B65 /* DXFSubscription.swift */,
+				803C614D29A3C1B600102B65 /* DXEndpoint.swift */,
+				803C615329A3CCF400102B65 /* DXFeedSubscription.swift */,
 				803C614F29A3C4F200102B65 /* String+Extension.swift */,
 				803C615129A3C7DE00102B65 /* BrdigeCast.swift */,
 				803C615529A3D0E600102B65 /* DXFTimeSale.swift */,
 				803C617629A3DA2600102B65 /* PublicFile.swift */,
 				803C617829A3DC6300102B65 /* DXFPublicEnv.swift */,
 				803C617A29A3DD5500102B65 /* DXFSubscriptionListener.swift */,
+				809E25D229B0F17800AD5D27 /* EventEnum.swift */,
 			);
 			path = DXFSwiftFramework;
 			sourceTree = "<group>";
@@ -310,9 +313,10 @@
 				803C617729A3DA2600102B65 /* PublicFile.swift in Sources */,
 				803C615629A3D0E600102B65 /* DXFTimeSale.swift in Sources */,
 				803C617B29A3DD5500102B65 /* DXFSubscriptionListener.swift in Sources */,
-				803C614E29A3C1B600102B65 /* DXFConnection.swift in Sources */,
-				803C615429A3CCF400102B65 /* DXFSubscription.swift in Sources */,
+				803C614E29A3C1B600102B65 /* DXEndpoint.swift in Sources */,
+				803C615429A3CCF400102B65 /* DXFeedSubscription.swift in Sources */,
 				803C614229A3BABD00102B65 /* DXFEnv.swift in Sources */,
+				809E25D329B0F17800AD5D27 /* EventEnum.swift in Sources */,
 				803C615229A3C7DE00102B65 /* BrdigeCast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

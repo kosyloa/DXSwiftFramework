@@ -8,7 +8,7 @@
 import Foundation
 @_implementationOnly import graal_builds
 
-class DXFConnection {
+class DXEndpoint {
     let address: String
     let env: DXFEnv
     public var endpoint = UnsafeMutablePointer<dxfg_endpoint_t>.allocate(capacity: 1)
@@ -18,6 +18,38 @@ class DXFConnection {
     deinit {
         dxfg_DXEndpoint_removeStateChangeListener(self.env.thread.pointee, self.endpoint, self.listener)
         print("dealloc")
+    }
+    
+    static func builder() -> DXEndpoint {
+        return DXEndpoint(address: "", env: DXFEnv())
+    }
+    
+    
+    func getFeed() -> DXEndpoint {
+        return self
+    }
+    
+    func withPropery(_ a: String, _ b: String) -> DXEndpoint {
+        
+        return self;
+    }
+    
+    func createSubscription(_ type: FeedType ) -> DXEndpoint {
+        return self
+    }
+    
+    func addSymbols(_ str: String) {
+        
+    }
+    
+    func addListener(_ listener: ([String])->()) {
+        
+    }
+    
+    
+    
+    func build() -> DXEndpoint {
+        return self
     }
     
     init(address: String, env: DXFEnv) {
@@ -30,7 +62,7 @@ class DXFConnection {
         let swiftCallback : @convention(c) (OpaquePointer?, dxfg_endpoint_state_t, dxfg_endpoint_state_t, UnsafeMutableRawPointer?) -> Void = {_,_,newState,context in
 //            let s = bridge(ptr: context123)
             if let context = context {
-                let s: DXFConnection = bridge(ptr: context)
+                let s: DXEndpoint = bridge(ptr: context)
                 s.print123()
                 print("state changed \(newState.rawValue) \(context)")
             }

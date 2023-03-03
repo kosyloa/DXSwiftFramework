@@ -8,7 +8,7 @@
 import Foundation
 @_implementationOnly import graal_builds
 
-class DXFSubscription {
+class DXFeedSubscription {
     
     var subscription = UnsafeMutablePointer<dxfg_subscription_t>.allocate(capacity: 1)
     var listener = UnsafeMutablePointer<dxfg_feed_event_listener_t>.allocate(capacity: 1)
@@ -22,7 +22,7 @@ class DXFSubscription {
         let swiftCallback : @convention(c) (OpaquePointer?, UnsafeMutablePointer<dxfg_event_type_list>?, UnsafeMutableRawPointer?) -> Void = {_,list,context in
             if let context = context {
                 
-                let s: DXFSubscription = bridge(ptr: context)
+                let s: DXFeedSubscription = bridge(ptr: context)
                 let size = Int(list?.pointee.size ?? 0)
                 if size > 0 {
                     var events = [DXFTimeSale?](repeating: nil, count: size)
