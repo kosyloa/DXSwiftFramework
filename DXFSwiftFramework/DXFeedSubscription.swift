@@ -57,7 +57,7 @@ class DXFeedSubscription {
         self.extListener = listener
     }
     
-    func subscrive(_ symbol: String) {
+    func subscribe(_ symbol: String) {
         let symbol = dxfg_Symbol_new(self.env.thread.pointee, symbol.toCStringRef(), STRING);
         let res = dxfg_DXFeedSubscription_addSymbol(self.env.thread.pointee, self.subscription, symbol);
         dxfg_Symbol_release(self.env.thread.pointee, symbol);

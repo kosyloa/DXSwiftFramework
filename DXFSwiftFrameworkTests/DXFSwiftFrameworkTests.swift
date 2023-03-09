@@ -32,7 +32,7 @@ class DXFSwiftFrameworkTests: XCTestCase {
         let subscr = DXFeedSubscription(env: env, feed: feed)
         let testListener = TestListener()
         subscr.addListener(testListener)
-        subscr.subscrive("ETH/USD:GDAX")
+        subscr.subscribe("ETH/USD:GDAX")
         
         print("connected")
         let expectation = keyValueObservingExpectation(for: testListener, keyPath: "count") { (value, value1) in
